@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	</head>
+	<body>
+
+<!--
+
+<style type="text/css">
+
+  /* WebKit and Opera browsers */
+  @-webkit-keyframes spinner {
+    from { -webkit-transform: rotateY(0deg);    }
+    to   { -webkit-transform: rotateY(-360deg); }
+  }
+
+  /* all other browsers */
+  @keyframes spinner {
+    from {
+      -moz-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+    }
+    to {
+      -moz-transform: rotateY(-360deg);
+      -ms-transform: rotateY(-360deg);
+      transform: rotateY(-360deg);
+    }
+  }
+  #stage {
+    margin: 1em auto;
+    /* -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -ms-perspective: 1200px; */
+    /* perspective: 1200px; */
+    position: fixed;
+    bottom: 30px;
+    right: 100px;
+    z-index: 10000000;
+  }
+  #spinner {
+    -webkit-animation-name: spinner;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 25s;
+
+    animation-name: spinner;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 25s;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  #spinner:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+.ele-result-cubebox {
+    position: absolute;
+    border: 1px solid #ccc;
+    background: rgba(255,255,255,.8);
+    box-shadow: inset 0 0 20px rgba(0,0,0,.2);
+    width: 144px;height: 195px;
+}
+.tab-wrap{
+  width:100%;
+}
+table {
+    border: 1px solid #979998;
+    border-collapse: collapse;
+    padding: 5px;
+    font-size: 12px;
+}
+th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    font-size: 12px;
+		text-align: left;
+    background: #000000;
+    color: #fff;
+}
+td {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    font-size: 10px;
+    background: #f5f5f5;
+    color: #000;
+}
+.per-head{
+      background: #fe0000;
+    color: #fff;
+    padding: 5px 0px;
+    margin: 5px 0 0 0;
+		font-size: 14px;
+    text-align: center;
+
+}
+.front-img {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.front-img img {width: 80px;}
+            .cand-img {margin: 0 auto;width: 50px;height: 50px;border-radius: 50%;border: 1px solid #ccc;overflow: hidden;}
+            .cand-img img {width: 100%;height: 100%;display: block;}
+            .cand-name {font-size: 14px;color: #000;text-align: center;font-weight: bold;}
+            .cand-const {font-size: 13px;color: #333;text-align: center;padding: 3px 0;}
+            .cand-won {font-size: 12px;text-align: center;}
+            .leading {color: #6d9a48;}
+            .trailing {color: #f64646;}
+            .awaited {color: #999999;}
+            .won {color: #00923f;}
+            .lost {color: #f00b0b;}
+            .close-cube {position: absolute;right: -20px;top: -30px;width: 31px;height: 31px;background: #fff url(images/close.png) no-repeat 0 0;z-index: 10000000;border-radius: 50%;}
+</style>
+
+<div id="stage" style="width: 180px; height: 195px;"><span class="close-cube"></span>
+    <div id="spinner">
+        <div class="ele-result-cubebox" style="-webkit-transform: rotateY(0deg) translateZ(125px); -moz-transform: rotateY(0deg) translateZ(125px); -ms-transform: rotateY(0deg) translateZ(125px); ">
+            <h4 class="per-head head1">Loksabha Results </h4>
+            <table class="tab-wrap">
+                <tbody>
+                 <tr>
+                    <th>Party</th>
+                    <th>L</th>
+                    <th>W</th>
+                    <th>Total</th>
+                  </tr>
+                  <tr>
+                    <td>BJP+</td>
+                    <td>88</td>
+                    <td>111</td>
+                    <td>199</td>
+                  </tr>
+                   <tr>
+                    <td>INC+</td>
+                    <td>88</td>
+                    <td>111</td>
+                    <td>199</td>
+                  </tr>
+                   <tr>
+                    <td>Others</td>
+                    <td>45</td>
+                    <td>100</td>
+                    <td>145</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="front-img">
+                <img src="images/ad-2.jpg" alt="" />
+               </div>
+        </div>
+        <div class="ele-result-cubebox" style="-webkit-transform: rotateY(60deg) translateZ(125px); -moz-transform: rotateY(60deg) translateZ(125px); -ms-transform: rotateY(60deg) translateZ(125px); ">
+            <h4 class="per-head head2">MP Results</h4>
+            <table class="tab-wrap">
+                <tbody>
+                     <tr>
+                        <th>Party</th>
+                        <th>L</th>
+                        <th>W</th>
+                        <th>Total</th>
+                      </tr>
+                      <tr>
+                        <td>AIADMK+</td>
+                        <td>88</td>
+                        <td>111</td>
+                        <td>199</td>
+                      </tr>
+                       <tr>
+                        <td>DMK+</td>
+                        <td>88</td>
+                        <td>111</td>
+                        <td>199</td>
+                      </tr>
+                       <tr>
+                        <td>Others</td>
+                        <td>45</td>
+                        <td>100</td>
+                        <td>145</td>
+                      </tr>
+                </tbody>
+              </table>
+             <div class="front-img">
+                <img src="images/ad-3.jpg" alt="" />
+              </div>
+        </div>
+        <div class="ele-result-cubebox" style="-webkit-transform: rotateY(120deg) translateZ(125px); -moz-transform: rotateY(120deg) translateZ(125px); -ms-transform: rotateY(120deg) translateZ(125px); ">
+            <h4 class="per-head head3">AP Assembly Result</h4>
+              <table class="tab-wrap">
+                <tbody>
+                     <tr>
+                        <th>Party</th>
+                        <th>L</th>
+                        <th>W</th>
+                        <th>Total</th>
+                      </tr>
+                      <tr>
+                        <td>YSRC+</td>
+                        <td>88</td>
+                        <td>111</td>
+                        <td>199</td>
+                      </tr>
+                       <tr>
+                        <td>TDP+</td>
+                        <td>88</td>
+                        <td>111</td>
+                        <td>199</td>
+                      </tr>
+                       <tr>
+                        <td>Others</td>
+                        <td>45</td>
+                        <td>100</td>
+                        <td>145</td>
+                      </tr>
+                </tbody>
+              </table>
+
+              <div class="front-img">
+                    <img src="images/ad-1.jpg" alt="" />
+              </div>
+        </div>
+
+				<div class="ele-result-cubebox" style="-webkit-transform: rotateY(120deg) translateZ(125px); -moz-transform: rotateY(120deg) translateZ(125px); -ms-transform: rotateY(120deg) translateZ(125px); ">
+						<h4 class="per-head head3">AP Assembly Result</h4>
+							<table class="tab-wrap">
+								<tbody>
+										 <tr>
+												<th>Party</th>
+												<th>L</th>
+												<th>W</th>
+												<th>Total</th>
+											</tr>
+											<tr>
+												<td>YSRC+</td>
+												<td>88</td>
+												<td>111</td>
+												<td>199</td>
+											</tr>
+											 <tr>
+												<td>TDP+</td>
+												<td>88</td>
+												<td>111</td>
+												<td>199</td>
+											</tr>
+											 <tr>
+												<td>Others</td>
+												<td>45</td>
+												<td>100</td>
+												<td>145</td>
+											</tr>
+								</tbody>
+							</table>
+
+							<div class="front-img">
+										<img src="images/ad-1.jpg" alt="" />
+							</div>
+				</div>
+
+    </div>
+
+</div> -->
+<style type="text/css">
+/* http://css-tricks.com/examples/ShapesOfCSS/ */
+#star5 {
+ margin: 50px 0;
+ position: relative;
+ display: block;
+ width: 0px;
+ height: 0px;
+ border-right: 100px solid transparent;
+ border-bottom: 70px solid #05ed08;
+ border-left: 100px solid transparent;
+ -moz-transform: rotate(35deg);
+ -webkit-transform: rotate(35deg);
+ -ms-transform: rotate(35deg);
+ -o-transform: rotate(35deg);
+}
+#star5:before {
+ border-bottom: 80px solid #05ed08;
+ border-left: 30px solid transparent;
+ border-right: 30px solid transparent;
+ position: absolute;
+ height: 0;
+ width: 0;
+ top: -45px;
+ left: -65px;
+ display: block;
+ content:"";
+ -webkit-transform: rotate(-35deg);
+ -moz-transform: rotate(-35deg);
+ -ms-transform: rotate(-35deg);
+ -o-transform: rotate(-35deg);
+}
+#star5:after {
+ position: absolute;
+ display: block;
+ top: 3px;
+ left: -105px;
+ width: 0px;
+ height: 0px;
+ border-right: 100px solid transparent;
+ border-bottom: 70px solid #05ed08;
+ border-left: 100px solid transparent;
+ -webkit-transform: rotate(-70deg);
+ -moz-transform: rotate(-70deg);
+ -ms-transform: rotate(-70deg);
+ -o-transform: rotate(-70deg); content:"";
+}
+.flip-spinner {
+	background-color: transparent;
+	width: 300px;
+	height: 300px;
+	perspective: 1000px;
+}
+.flip-star-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.flip-front, .flip-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+/* WebKit and Opera browsers */
+@-webkit-keyframes spinner {
+	from { -webkit-transform: rotateY(0deg);    }
+	to   { -webkit-transform: rotateY(-360deg); }
+}
+
+/* all other browsers */
+@keyframes spinner {
+	from {
+		-moz-transform: rotateY(0deg);
+		-ms-transform: rotateY(0deg);
+		transform: rotateY(0deg);
+	}
+	to {
+		-moz-transform: rotateY(-360deg);
+		-ms-transform: rotateY(-360deg);
+		transform: rotateY(-360deg);
+	}
+}
+#spinner {
+	-webkit-animation-name: spinner;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 5s;
+
+	animation-name: spinner;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-duration: 5s;
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.flip-front {
+	background-color: #bbb;
+	color: black;
+}
+
+.flip-back {
+	background-color: #2980b9;
+	color: white;
+	transform: rotateY(-180deg);
+}
+</style>
+<div class="flip-spinner" id="spinner">
+	<div class="flip-star-inner">
+		<div id="star5" class="flip-front">
+
+		</div>
+		<div id="star5" class="flip-back">
+
+		</div>
+	</div>
+</div>
+
+
+
+
+	</body>
+</html>
